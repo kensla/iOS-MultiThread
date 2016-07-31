@@ -303,6 +303,36 @@ CSOperationCompletionDelegate, CSThreadCompletionDelegate {
                 self.addMyArray(1)
             })
             break
+        case "dispatch_semaphore":
+            /*
+            // will barrier the UI.
+            let signal: dispatch_semaphore_t = dispatch_semaphore_create(0)
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                print("execution inside the block ...")
+                sleep(10)
+                dispatch_semaphore_signal(signal)
+            })
+            
+            print("execution outside the block, waiting ...")
+            dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER)
+            print("execution outside the block, ok ...")
+            */
+            
+            // will barrier the UI.
+            let signal: dispatch_semaphore_t = dispatch_semaphore_create(0)
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                print("execution inside the block ...")
+                sleep(10)
+                dispatch_semaphore_signal(signal)
+                print("execution inside the block : signal...")
+            })
+            
+            print("execution outside the block, waiting ...")
+            dispatch_semaphore_wait(signal, dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 2)))
+            print("execution outside the block, ok ...")
+            break
         default:
             break
         }

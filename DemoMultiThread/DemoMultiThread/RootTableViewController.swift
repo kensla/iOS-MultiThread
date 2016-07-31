@@ -20,12 +20,15 @@ class RootTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.demos =                   ["GCD",
+        self.demos =                   [
+                                        "GCD",
                                         "NSOperationQueue",
                                         "NSThread",
                                         "ThreadSecurity",
-                                        "NSRunLoop"]
-        self.samplesGCD =              ["dispatch_queue_t",
+                                        "NSRunLoop",
+                                        ]
+        self.samplesGCD =              [
+                                        "dispatch_queue_t",
                                         "dispatch_once",
                                         "dispatch_apply",
                                         "dispatch_after",
@@ -35,17 +38,25 @@ class RootTableViewController: UITableViewController {
                                         "dispatch_group_async",
                                         "dispatch_group_notify",
                                         "dispatch_group_wait",
-                                        "dispatch_suspend_resume"]
-        self.samplesNSOperationQueue = ["NSOperationQueue",
+                                        "dispatch_suspend_resume",
+                                        ]
+        self.samplesNSOperationQueue = [
+                                        "NSOperationQueue",
                                         "CustomOperation",
                                         "addDependency",
                                         "queuePriority",
                                         "maxConcurrentOperationCount",
-                                        "cancel_suspended"]
-        self.samplesNSThreads =        ["NSThread",
-                                        "CustomThread"]
-        self.samplesThreadSecurity =   ["Singleton",
-                                        "dispatch_barrier_async"]
+                                        "cancel_suspended",
+                                        ]
+        self.samplesNSThreads =        [
+                                        "NSThread",
+                                        "CustomThread",
+                                        ]
+        self.samplesThreadSecurity =   [
+                                        "Singleton",
+                                        "dispatch_barrier_async",
+                                        "dispatch_semaphore",
+                                        ]
         self.samplesNSRunLoop = []
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
