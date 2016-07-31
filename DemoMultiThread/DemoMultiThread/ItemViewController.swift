@@ -33,7 +33,7 @@ CSOperationCompletionDelegate, CSThreadCompletionDelegate {
         btn.setTitleColor(UIColor.redColor(), forState: UIControlState.Highlighted)
         btn.layer.borderColor = UIColor.redColor().CGColor
         btn.layer.borderWidth = 2.0
-        btn.addTarget(self, action: Selector("demos"), forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(ItemViewController.demos), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btn)
     }
 
@@ -266,7 +266,7 @@ CSOperationCompletionDelegate, CSThreadCompletionDelegate {
             
         case "NSThread":
             // 新开一个子线程来执行操作
-            NSThread.detachNewThreadSelector(Selector("delayAction"), toTarget: self, withObject: nil)
+            NSThread.detachNewThreadSelector(#selector(ItemViewController.delayAction), toTarget: self, withObject: nil)
             // 主线程即为main
             print(NSThread.currentThread())
 //            NSThread.sleepForTimeInterval(2)
